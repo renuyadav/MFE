@@ -9,7 +9,7 @@ on:
 
 defaults:
   run:
-    working-directory: ./packages/container
+    working-directory: packages/container
 
 jobs:
   build-and-deploy:
@@ -22,6 +22,8 @@ jobs:
         run: |
           npm install
           npm run build
+        env:
+          PROD_DOMAIN: ${{ secrets.PROD_DOMAIN }} 
       - name: List Files in Root Directory
         run: ls -R
       - name: Deploy to Netlify
