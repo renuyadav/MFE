@@ -18,14 +18,18 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
-      - name: Install dependencies and build MFE
-        run: |
-          npm install
-          npm run build
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build MFE application
+        run: npm run build
         env:
-          PROD_DOMAIN: ${{ secrets.PROD_DOMAIN }} 
+          PROD_DOMAIN: ${{ secrets.PROD_DOMAIN }}
+
       - name: List Files in Root Directory
         run: ls -R
+        
       - name: Deploy to Netlify
         uses: netlify/actions/cli@master
         with:
