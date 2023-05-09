@@ -16,9 +16,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout Code
+        uses: actions/checkout@v2
       - name: Install dependencies and build MFE
-        run:
+        run: |
           npm install
           npm run build
       - name: Deploy to Netlify
