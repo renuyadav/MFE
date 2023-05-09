@@ -1,12 +1,16 @@
 import React from 'react';
+import {BrowserRouter} from 'react-router-dom';
 import MarketingApp from './components/MarketingApp';
+import Header from './components/Header';
 
 export default(() => {
    return ( 
+    <BrowserRouter>
     <div>
-        <h1>Hi, I am Container of MFE packages</h1>
+        <Header />
         <hr/>
         <MarketingApp/>
     </div>
+    </>
    )
 })
