@@ -11,6 +11,6 @@ export default(() => {
         <hr/>
         <MarketingApp/>
     </div>
-    </>
+    </BrowserRouter>
    )
 })

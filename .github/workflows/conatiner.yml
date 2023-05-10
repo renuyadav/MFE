@@ -28,7 +28,9 @@ jobs:
           PROD_DOMAIN: ${{ secrets.PROD_DOMAIN }}
 
       - name: List Files in Root Directory
-        run: ls -R
+        run: |
+          echo "Root directory: $(basename $(pwd))"
+          ls -R
 
       - name: Deploy to Netlify
         uses: netlify/actions/cli@master

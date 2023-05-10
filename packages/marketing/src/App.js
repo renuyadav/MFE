@@ -8,7 +8,7 @@ import Pricing from './components/Pricing';
 export default () => {
   return (
     <div>
-      <div>Hello, I am the Marketing</div>
+      <div>Hello, I am the Marketing app</div>
       <StylesProvider>
         <BrowserRouter>
           <Switch>
