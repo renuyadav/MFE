@@ -1,0 +1,27 @@
+[build]
+  command = "npm run build"
+  
+[[redirects]]
+  from = "/packages/container/*"
+  to = "/packages/container/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/packages/marketing/*"
+  to = "/packages/marketing/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/packages/container/**"
+    [headers.values]
+    Access-Control-Allow-Origin = "*"
+
+[[headers]]
+  for = "/packages/marketing/**"
+    [headers.values]
+    Access-Control-Allow-Origin = "*"

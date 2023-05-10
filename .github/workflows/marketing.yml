@@ -31,7 +31,7 @@ jobs:
         with:
           args: deploy --prod --dir=./packages/marketing/dist --site=$NETLIFY_SITE_ID --auth=$NETLIFY_AUTH_TOKEN
         env:
-          NETLIFY_SITE_ID: 9c9dd9f0-b4e2-4074-b7b5-674f1ecb5157
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
 
 
