@@ -16,8 +16,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v2
       - name: Checkout Code
-        uses: actions/checkout@v2
+        run: cp netlify.toml
 
       - name: Install dependencies
         run: npm install
