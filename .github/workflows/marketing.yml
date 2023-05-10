@@ -18,7 +18,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Checkout Code
-        run : cp netlify.toml
+        run : cp netlify.toml $GITHUB_WORKSPACE/
         
       - name: Install dependencies and build marketing
         run: |
