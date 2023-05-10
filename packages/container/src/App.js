@@ -7,7 +7,7 @@ export default(() => {
    return ( 
     <BrowserRouter>
     <div>
-        <Header />
+        <Header/>
         <hr/>
         <MarketingApp/>
     </div>
