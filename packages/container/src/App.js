@@ -7,7 +7,7 @@ export default(() => {
    return ( 
     <BrowserRouter>
     <div>
-        <h1>container microfront-end</h1>
+        <h1>container microfrontend</h1>
         <Header/>
         <hr/>
         <MarketingApp/>
