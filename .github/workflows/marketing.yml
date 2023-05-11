@@ -30,7 +30,7 @@ jobs:
       - name: Deploy to Netlify
         uses: netlify/actions/cli@master
         with:
-          args: deploy --prod
+          args: deploy --prod --dir=microfrontend-1 ./packages/marketing/dist --site=$NETLIFY_SITE_ID
       
         env:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
