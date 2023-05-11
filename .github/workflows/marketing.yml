@@ -34,10 +34,5 @@ jobs:
         env:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-      
-      - name: Set NETLIFY_DEPLOY_DIR environment variable
-        run: |
-          echo "NETLIFY_DEPLOY_DIR=$(netlify status --json | jq -r '.deploy_url')" >> $GITHUB_ENV
-
 
 
