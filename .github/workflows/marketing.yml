@@ -28,10 +28,10 @@ jobs:
           echo "Root directory: $(basename $(pwd))"
           ls -R
       - name: Deploy to Netlify
-        uses: nwtgck/actions-netlify
+        uses: netlify/actions/cli@master
         with:
-          publish-dir: "packages/marketing/dist"
-          dir: "marketing"
+          args: deploy --prod --dir=./packages/marketing/dist --site=$NETLIFY_SITE_ID
+      
         env:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
