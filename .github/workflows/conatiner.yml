@@ -36,9 +36,14 @@ jobs:
       - name: Deploy to Netlify
         uses: netlify/actions/cli@master
         with:
-          args: deploy --prod --dir=./packages/container/dist --site=$NETLIFY_SITE_ID --prod --dir=${{ env.NETLIFY_DEPLOY_DIR }}/container
+          args: deploy --prod --dir=./packages/container/dist --site=$NETLIFY_SITE_ID
         env:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+
+      - name: Set NETLIFY_DEPLOY_DIR environment variable
+        run: |
+          echo "NETLIFY_DEPLOY_DIR=$(netlify status --json | jq -r '.deploy_url')" >> $GITHUB_ENV
+
 
 
