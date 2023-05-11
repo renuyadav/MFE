@@ -1,14 +1,15 @@
 [build]
-  command = "npm run build"
+  base = "/"
+  publish = "/container" # Specify the relative path to the subdirectory where the built files are located
   
 [[redirects]]
-  from = "/packages/container/*"
-  to = "/packages/container/:splat"
+  from = "/container/*"
+  to = "/container/:splat"
   status = 200
 
 [[redirects]]
-  from = "/packages/marketing/*"
-  to = "/packages/marketing/:splat"
+  from = "/marketing/*"
+  to = "/marketing/:splat"
   status = 200
 
 [[redirects]]
@@ -17,11 +18,11 @@
   status = 200
 
 [[headers]]
-  for = "/packages/container/**"
+  for = "/container/**"
     [headers.values]
     Access-Control-Allow-Origin = "*"
 
 [[headers]]
-  for = "/packages/marketing/**"
+  for = "/marketing/**"
     [headers.values]
     Access-Control-Allow-Origin = "*"
