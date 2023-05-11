@@ -34,7 +34,7 @@ jobs:
           ls -R
 
       - name: Deploy to Netlify
-        uses: nwtgck/actions-netlify@v1.4.0
+        uses: nwtgck/actions-netlify
         with:
           publish-dir: "packages/container/dist"
           dir: "container"
