@@ -1,6 +1,8 @@
+
 [build]
+  base = "packages/container/"
   command = "echo 'Build not required'"
-  functions = "functions/"
+  publish = "packages/container/dist/"
 
 [[redirects]]
   from = "/*"
