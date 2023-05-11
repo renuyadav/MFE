@@ -34,9 +34,10 @@ jobs:
           ls -R
 
       - name: Deploy to Netlify
-        uses: netlify/actions/cli@master
+        uses: nwtgck/actions-netlify@v1.4.0
         with:
-          args: deploy --prod --base-directory=./packages/container/ --site=$NETLIFY_SITE_ID
+          publish-dir: "packages/container/dist"
+          dir: "container"
         env:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
