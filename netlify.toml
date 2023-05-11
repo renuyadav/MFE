@@ -1,20 +1,14 @@
-
-[build]
-  base = "packages/container/"
-  command = "echo 'Build not required'"
-  publish = "packages/container/dist/"
-
 [[redirects]]
-  from = "/*"
-  to = "/packages/container/:splat"
+  from = "/container/*"
+  to = "/container/index.html"
   status = 200
 
 [[redirects]]
-  from = "/packages/container/*"
-  to = "/packages/container/:splat"
+  from = "/marketing/*"
+  to = "/marketing/index.html"
   status = 200
 
 [[redirects]]
-  from = "/packages/marketing/*"
-  to = "/packages/marketing/:splat"
+  from = "/"
+  to = "/container/index.html"
   status = 200
