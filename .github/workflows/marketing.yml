@@ -31,7 +31,7 @@ jobs:
         run: npm install netlify-cli -g
 
       - name: Create Netlify site folder
-        run: netlify createSiteFolder --site=$NETLIFY_SITE_ID --dir=marketing
+        run: netlify createSiteFolder --site=${{ secrets.NETLIFY_SITE_ID }} --dir=marketing
 
       - name: Deploy to Netlify
         uses: netlify/actions/cli@master
