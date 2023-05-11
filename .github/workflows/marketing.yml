@@ -30,8 +30,7 @@ jobs:
       - name: Deploy to Netlify
         uses: netlify/actions/cli@master
         with:
-          args: deploy --prod --dir=./packages/marketing/dist/site2 --site=$NETLIFY_SITE_ID --dir=/marketing
-        env:
+          args: deploy --prod --dir=./packages/marketing/dist --site=$NETLIFY_SITE_ID --dir=/marketing
         env:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
