@@ -3,7 +3,7 @@ const commonConfig = require('./webpack.common')
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
 const packageJson = require('../package.json');
 
-const domain = process.env.MARKETING_SITE_NAME;
+const domain = process.env.PROD_DOMAIN;
 
 console.log("domain name in container config>>", domain);
 
