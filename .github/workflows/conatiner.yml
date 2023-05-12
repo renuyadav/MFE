@@ -24,7 +24,7 @@ jobs:
         run: npm install
 
       - name: Build MFE application
-        run: npm run build
+        run: npm run build -u $PROD_DOMAIN
         env:
           PROD_DOMAIN: ${{ secrets.MARKETING_SITE_NAME }}
 

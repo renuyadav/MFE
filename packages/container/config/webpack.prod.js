@@ -5,6 +5,7 @@ const packageJson = require('../package.json');
 
 const domain = process.env.MARKETING_SITE_NAME;
 
+console.log("domain name in container config>>", domain);
 
 const prodConfig = {
     mode: 'production',
