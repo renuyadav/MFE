@@ -26,7 +26,7 @@ jobs:
       - name: Build MFE application
         run: npm run build
         env:
-          PROD_DOMAIN: ${{ secrets.PROD_DOMAIN }}
+          PROD_DOMAIN: ${{ secrets.MARKETING_SITE_NAME }}
 
       - name: List Files in Root Directory
         run: |
