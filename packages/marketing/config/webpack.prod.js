@@ -12,7 +12,7 @@ const prodConfig = {
     mode: 'production',
     output: {
         filename:'[name].[contenthash].js',
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, '../dist'),
         publicPath: '/marketing/',
     },
     plugins:[
@@ -21,7 +21,8 @@ const prodConfig = {
         filename: 'remoteEntry.js',
         exposes:{
             './MarketingApp': './src/bootstrap',
-        }
+        },
+        shared: packageJson.dependencies
        }) 
     ]
 

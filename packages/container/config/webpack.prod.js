@@ -12,7 +12,7 @@ const prodConfig = {
     mode: 'production',
     output: {
         filename: '[name][contenthash].js',
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, '../dist'),
         publicPath: '/container/',
     },
     plugins:[
@@ -20,7 +20,8 @@ const prodConfig = {
             name: 'container',
             remotes: {
                 marketing: `marketing@${domain}marketing/remoteEntry.js`
-            }
+            },
+            shared: packageJson.dependencies
         })
     ]
 
