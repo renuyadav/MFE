@@ -11,7 +11,7 @@ const prodConfig = {
     mode: 'production',
     output: {
         filename:'[name].[contenthash].js',
-        publicPath: `${domain}`
+        publicPath: ''
     },
     plugins:[
        new ModuleFederationPlugin({
@@ -19,8 +19,7 @@ const prodConfig = {
         filename: 'remoteEntry.js',
         exposes:{
             './MarketingApp': './src/bootstrap',
-        },
-        shared: packageJson.dependencies
+        }
        }) 
     ]
 
