@@ -12,14 +12,14 @@ const prodConfig = {
     mode: 'production',
     output: {
         filename: '[name][contenthash].js',
-        path: path.resolve(__dirname, '../dist'),
-        publicPath: '',
+        path: path.resolve(__dirname, '../dist/cntr'),
+        publicPath: '/cntr',
     },
     plugins:[
         new ModuleFederationPlugin({
             name: 'container',
             remotes: {
-                marketing: `marketing@${domain}remoteEntry.js`
+                marketing: `marketing@${domain}market/remoteEntry.js`
             },
             shared: packageJson.dependencies
         })
