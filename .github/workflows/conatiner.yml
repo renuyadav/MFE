@@ -28,6 +28,9 @@ jobs:
         env:
           PROD_DOMAIN: ${{ secrets.MARKETING_SITE_NAME}}
       
+      - name: Copy netlify.toml
+        run: cp netlify.toml dist/
+      
       - name: List Files in Root Directory
         run: |
           echo "Root directory: $(basename $(pwd))"
@@ -36,7 +39,7 @@ jobs:
       - name: Deploy to Netlify
         uses: netlify/actions/cli@master
         with:
-          args: deploy --prod --dir=./packages/container/dist/container  --site=$NETLIFY_SITE_ID
+          args: deploy --prod --dir=./packages/container/dist  --site=$NETLIFY_SITE_ID
         env:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
