@@ -28,9 +28,6 @@ jobs:
         env:
           PROD_DOMAIN: ${{ secrets.MARKETING_SITE_NAME}}
       
-      - name: Copy netlify.toml
-        run: cp netlify.toml ./packages/container/dist/container
-      
       - name: List Files in Root Directory
         run: |
           echo "Root directory: $(basename $(pwd))"
