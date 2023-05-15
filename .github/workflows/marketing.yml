@@ -24,7 +24,7 @@ jobs:
           npm install
           npm run build
         env:
-          PROD_DOMAIN: ${{ secrets.MARKETING_SITE_ID }}
+          PROD_DOMAIN: ${{ secrets.MARKETING_SITE_NAME }}
       
       - name: Copy netlify.toml
         run: cp netlify.toml dist/
