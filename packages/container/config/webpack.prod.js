@@ -13,7 +13,7 @@ const prodConfig = {
     output: {
         filename: '[name][contenthash].js',
         path: path.resolve(__dirname, '../dist/container'), //it will create container folder inside dist
-        publicPath: '/container', //files will be accessed from /container path
+        publicPath: '/container/', //files will be accessed from /container path
     },
     plugins:[
         new ModuleFederationPlugin({
