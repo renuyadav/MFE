@@ -23,6 +23,9 @@ jobs:
         run: |
           npm install
           npm run build
+        env:
+          PROD_DOMAIN: ${{ secrets.MARKETING_SITE_ID }}
+
       - name: List Files in Root Directory
         run: |
           echo "Root directory: $(basename $(pwd))"
