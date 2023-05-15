@@ -13,7 +13,7 @@ const prodConfig = {
     output: {
         filename:'[name].[contenthash].js',
         path: path.resolve(__dirname, '../dist/marketing'),
-        publicPath: `https://marketing-microfront-end.netlify.app/marketing/`,
+        publicPath: '/marketing/',
     },
     plugins:[
        new ModuleFederationPlugin({
