@@ -12,8 +12,8 @@ const prodConfig = {
     mode: 'production',
     output: {
         filename:'[name].[contenthash].js',
-        path: path.resolve(__dirname, '../dist/market'),
-        publicPath: '/market',
+        path: path.resolve(__dirname, '../dist/marketing'),
+        publicPath: '/marketing',
     },
     plugins:[
        new ModuleFederationPlugin({

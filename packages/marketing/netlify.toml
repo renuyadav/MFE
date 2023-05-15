@@ -1,2 +1,2 @@
 [build]
-  publish = "./packages/marketing/dist"
+  publish = "./packages/marketing/dist/marketing"

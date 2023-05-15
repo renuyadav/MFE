@@ -1,2 +1,2 @@
 [build]
-  publish = "./packages/container/dist"
+  publish = "./packages/container/dist/container"
