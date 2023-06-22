@@ -13,7 +13,7 @@ const prodConfig = {
     output: {
         filename:'[name].[contenthash].js',
         path: path.resolve(__dirname, '../dist/auth'),
-        publicPath: `${domain}auth/`,
+        publicPath: `${domain}/auth/`,
     },
     plugins:[
        new ModuleFederationPlugin({
