@@ -1,0 +1,47 @@
+name: deploy-auth
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'packages/auth/**'
+
+defaults:
+  run:
+    working-directory: ./packages/auth
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+        
+      - name: Install dependencies and build auth
+        run: |
+          npm install
+          npm run build
+        env:
+          PROD_DOMAIN: ${{ secrets.AUTH_SITE_NAME }}
+      
+      - name: Copy netlify.toml
+        run: cp netlify.toml dist/
+
+      - name: List Files in Root Directory
+        run: |
+          echo "Root directory: $(basename $(pwd))"
+          ls -R
+      - name: Install Netlify CLI
+        run: npm install netlify-cli -g
+
+      - name: Deploy to Netlify
+        uses: netlify/actions/cli@master
+        with:
+          args: deploy --prod --dir=./packages/auth/dist --site=$NETLIFY_SITE_ID
+        env:
+          NETLIFY_SITE_ID: ${{ secrets.AUTH_SITE_ID }}
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+
+
