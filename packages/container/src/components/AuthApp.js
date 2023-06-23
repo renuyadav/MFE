@@ -18,7 +18,7 @@ export default ({onSignIn:containerSignIn}) => {
             }
         },
         onSignIn(){
-            console.log("container onsignin called");
+            console.log("container onsignin");
             containerSignIn();
         },
     })
